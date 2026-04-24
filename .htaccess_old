@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.fih.com/$1 [L,R=301]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.fih.com/$1 [L,R=301] 
+</IfModule>
+#SetEnvIf Request_URI ^/api allow
+
+#AuthType Basic
+#AuthName "restricted area"
+#AuthUserFile /home/fih/public_html/.htpasswd 
+#chage to your .htpasswd file ABSOLUTE path
+
+#Setup a deny/allow
+#Order Deny,Allow
+#Deny from everyone
+#Deny from all
+# except if either of these are satisfied
+#Satisfy any
+# 1. a valid authenticated user
+#Require valid-user
+# or 2. the "allow" var is set
+#Allow from env=allow
+#----
+#SetEnvIf Request_URI "/(api|oauth)(/.*)?$" allow
+
+#AuthType Basic
+#AuthName "Auth Required"
+#AuthUserFile /home/fih/public_html/.htpasswd 
+#Require valid-user
+#Satisfy any
+#Order      deny,allow
+#Deny from  all
+#Allow from env=allow

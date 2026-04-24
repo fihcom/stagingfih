@@ -1,0 +1,84 @@
+﻿@font-face {
+    font-family: 'SofiaProRegular';
+    src: url("../fonts/SofiaProRegular.eot"); /* IE9*/
+    src: url("../fonts/SofiaProRegular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/SofiaProRegular.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/SofiaProRegular.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/SofiaProRegular.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../fonts/SofiaProRegular.svg#SofiaProRegular") format("svg"); /* iOS 4.1- */
+}
+@font-face {
+    font-family: 'Sofia-Pro-Medium';
+    src: url("../fonts/Sofia-Pro-Medium.eot"); /* IE9*/
+    src: url("../fonts/Sofia-Pro-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Sofia-Pro-Medium.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/Sofia-Pro-Medium.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/Sofia-Pro-Medium.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../fonts/Sofia-Pro-Medium.svg#Sofia-Pro-Medium") format("svg"); /* iOS 4.1- */
+}
+@font-face {
+    font-family: 'sofia_pro_bold';
+    src: url('../fonts/sofia_pro_bold-webfont.eot');
+    src: url('../fonts/sofia_pro_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sofia_pro_bold-webfont.woff2') format('woff2'),
+         url('../fonts/sofia_pro_bold-webfont.woff') format('woff'),
+         url('../fonts/sofia_pro_bold-webfont.ttf') format('truetype'),
+         url('../fonts/sofia_pro_bold-webfont.svg#sofia_probold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+.hthead {font-size: 40px;line-height: 54px;color: #3a4350;font-family: 'sofia_pro_bold';}
+.ctn {font-size: 16px;line-height: 25px;color: #3a4350;font-family: 'SofiaProRegular';padding-bottom: 10px;}
+.ctn:last-child {padding-bottom: 0;}
+.orange {color: #ef561f;}
+.line {border-bottom: 1px solid transparent;}
+/* advise */
+.advise {padding: 0 0 75px;}
+.advise .wrapper {padding-right: 15px;}
+.advise .wrapper img {width: 100%;}
+.advise .para {padding: 28px 0 0;}
+.advise .orange {font-family: 'Sofia-Pro-Medium';}
+.advise .ctn {padding-bottom: 15px;}
+.advise .ctn:last-child{padding-bottom: 0;}
+.advise .advisework {padding-top: 80px;}
+.advise .line {border-top: 1px solid #b5cfe3; border-color: #b5cfe3; padding: 20px 0 25px;}
+.advise ul {padding-top: 28px;}
+.advise li {font-size: 16px;line-height: 25px;font-family: 'SofiaProRegular';color: #3a4350;padding: 0 35px 35px;}
+.advise li:last-child {padding-bottom: 0;}
+.advise li strong{font-family: 'sofia_pro_bold'; color: #ef561f;}
+/* advise end */
+
+/* meeting */
+.meeting {background: url(https://fih.com/assets/frontend/images/meetbanner.jpg) no-repeat center;background-size: cover;padding: 90px 0;}
+.meeting .hthead {line-height: 41px;}
+.meeting .htlist {padding-top: 55px;}
+.meeting li {font-size: 18px;line-height: 26px;font-family: 'SofiaProRegular';color: #3a4350;padding: 0 0 20px 20px;}
+.meeting .meetimg {text-align: right; padding-left: 30px;}
+.meeting .meetimg img {width: 100%;}
+/* meeting end */
+
+/*  */
+.service {background: #182033; padding: 50px 0;}
+.service .hthead {color: #ffffff;}
+.service .ctnIcon {padding-bottom: 35px;}
+.service .ctnIcon:last-child {padding-bottom: 0;}
+.service .ctn {color: #ffffff;}
+.service .iconimg {width: 100%;max-width: 80px;height: 80px;line-height: 80px;margin-right: 30px;border: 1px solid #ef561f;border-radius: 50%;text-align: center;}
+.service .reach {display: block;text-decoration: underline !important;text-align: center;color: #ffb8a5;font-family: 'Sofia-Pro-Medium';font-size: 16px; line-height: 35px;margin-top: 45px;transition: all 0.5s ease-in-out;}
+.service .reach:hover {color: #ffffff;}
+/* service end */
+.maconsulting > .container{
+        max-width: inherit;
+        padding: 0;
+}
+.service_sub{
+     max-width:900px; 
+     padding-top:50px;
+     margin: 0 auto;
+}
+.inner-pages.maconsulting .heading{
+        text-align: center;
+}

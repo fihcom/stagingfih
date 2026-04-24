@@ -1,0 +1,150 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="<?php echo base_url();?>administrator">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Schedule call Details</li>
+      </ol>
+      <div class="box_general padding_bottom site-setting-area">
+      <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+          <div class="header_box version_2">
+            <h2><i class="fa fa-file"></i>Call Details</h2>
+            <a style="float:right;" class="btn btn-primary btn-sm addasset" href="<?php echo base_url(); ?>administrator/callschedule">Back to list</a>
+          </div><!-- /.box-header -->
+          <!-- form start -->
+          <?php 
+              $error = $this->session->flashdata('error');
+              if($error) {
+                ?>
+                <div class="alert alert-danger alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <?php echo $this->session->flashdata('error'); ?>                    
+                </div>
+                <?php 
+              } 
+
+              $success = $this->session->flashdata('success');
+              if($success) { 
+                ?>
+                <div class="alert alert-success alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php 
+              } 
+              ?>
+                <br clear="all">
+                <form id="fundapprovefrm" action="<?php echo base_url()?>administrator/callschedule/editAction" method="post">
+            
+            
+            <div class="row">
+                <?php
+                //print '<pre>';
+                //print_r($result);
+                ?>
+                <div class="col-md-12">  
+                    <div class="row" id="offlinebanks">   
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                          <label>Name</label>
+                          <input type="text" class="form-control" name="user_name" value="<?php echo $result['callrequests'][0]['user_name'];?>" id="" placeholder="">
+                          </div>
+                      </div>
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="" value="<?php echo $result['callrequests'][0]['email'];?>" id="" placeholder="" disabled >
+                          </div>
+                      </div>
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" name="user_phone" value="<?php echo $result['callrequests'][0]['user_phone'];?>" id="" placeholder="" >
+                          </div>
+                      </div>
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                            <label>Call Time</label>
+                            <input type="date-local" class="form-control" name="call_time" value="<?php echo $result['callrequests'][0]['call_time'];?>" id="" placeholder="" >
+                          </div>
+                      </div>
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                            <label>Note</label>
+                            <textarea name="note" class="form-control" id="" rows="3"><?php echo $result['callrequests'][0]['note'];?></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-6">                       
+                          <div class="form-group">
+                            <label>Status</label>
+                            <select name="Status" id="" class="form-control">
+                            <option value="1" <?php echo ($result['callrequests'][0]['status'] == 1)?'selected':'';?>>Pending</option>
+                            <option value="3" <?php echo ($result['callrequests'][0]['status'] == 3)?'selected':'';?>>Approved</option>
+                            <option value="2" <?php echo ($result['callrequests'][0]['status'] == 2)?'selected':'';?>>Rejected</option>
+                            <option value="4" <?php echo ($result['callrequests'][0]['status'] == 4)?'selected':'';?>>Completed</option>
+                            </select>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+             
+
+            <div class="box-footer">
+              <?php
+              if($editpermission)
+              {
+                ?>
+              <input type="submit" name="button" class="btn btn-primary" value="Submit"/>
+              <?php
+              }
+              ?>
+            </div>
+            <input type="hidden" class="votecsrf" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
+            <input type="hidden" name="CallId" value="<?php echo $result['callrequests'][0]['id'];?>">
+            </form>
+        </div>
+      </div>
+    </div>    
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="deleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="deleteModalLabel">Are you sure want to approve this FAQ?</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-footer">
+        <form action="" method="post" id="delform">
+        <input type="hidden" class="votecsrf" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
+        <button type="button" class="btn btn-primary approvebtn">Approve</button>
+        </form>
+        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="rejectModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="deleteModalLabel">Are you sure want to remove this FAQ?</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-footer">
+        <form action="" method="post" id="rejectform">
+        <input type="hidden" class="votecsrf" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
+        <button type="submit" class="btn btn-danger">Reject</button>
+        </form>
+        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

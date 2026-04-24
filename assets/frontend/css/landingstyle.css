@@ -1,0 +1,230 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'SofiaProLight';
+    src: url('../fonts/SofiaProLight.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/SofiaProLight.otf')  format('opentype'),
+        url('../fonts/SofiaProLight.woff') format('woff'), 
+        url('../fonts/SofiaProLight.ttf')  format('truetype'), 
+        url('../fonts/SofiaProLight.svg#SofiaProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*, *:after, *:before {box-sizing: border-box;}
+ 
+body {
+    font-family: 'SofiaProLight';
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 25px;
+	padding: 0;
+	margin: 0;
+    color: #3a4350;  
+    background-color: #fff;
+}
+body, html{overflow-x: hidden;}
+.container{position: relative; max-width: 1200px;}
+.container:after, .clearfix:after{content: ""; display: block; clear: both;}
+.container .container{width: 100%;padding: 0;}
+.spacer, .clear {height: 0; line-height: 0; clear: both; font-size: 0; display: block;}
+
+/* defult css Styles
+---------------------------------*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, blockquote {margin: 0; padding: 0; border: 0; display: block;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal; line-height: normal;}
+h1 {font-size: 28px; margin: 0 0 15px;}
+h2 {font-size: 24px; margin: 0 0 15px;}
+h3 {font-size: 20px; margin: 0 0 12px;}
+h4 {font-size: 18px; margin: 0 0 12px;}
+h5 {font-size: 16px; margin: 0 0 10px;}
+h6 {font-size: 14px; margin: 0 0 10px;}
+ul, ol {margin-bottom: 10px; padding-left: 15px;}
+li {margin: 0 0 10px; padding: 0;}
+p {padding-bottom: 20px;margin: 0;}
+p:last-child{padding-bottom: 0;}
+label, span, strong {display: inline-block;}
+p label, p span, p strong {display: inline;}
+strong{font-weight: 700;}
+a {
+	color: #ff8464;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	display: inline-block;
+	-moz-transition: all 300ms ease-in-out 0s;
+	-webkit-transition: all 300ms ease-in-out 0s;
+	transition: all 300ms ease-in-out 0s;
+}
+a:hover, a:focus{color: #d4bc28;text-decoration: none;outline: none;} 
+img{max-width: 100%;}
+
+/* ================== */
+.bannerbox{position: relative; padding-bottom: 5px;}
+.bannerimg{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+.bannerimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.landing-bannertext{
+    padding-top: 170px;
+}
+.landing-bannertext-in{
+    background-color: #fff; 
+}
+.htop{
+    color: #fff;
+    padding: 18px 0;
+    background-color: rgb(16 25 30 / 60%);
+    font-weight: 500;
+    font-size: 13.5px;
+    font-family: 'Jost', sans-serif;
+}
+.htop a{color: inherit;}
+.htop a:hover{
+    color: #d4bc28;
+}
+.htop .phone span, .htop .address span{margin-right: 5px;}
+.hbottom{padding-top: 15px;}
+.address{margin-left: auto;}
+.logo a{max-width: 220px;}
+.headerWrap{position: absolute; width: 100%; left: 0; z-index: 999;}
+
+.land_listing{
+    padding: 25px 45px;
+    border-bottom: 1px solid #ccc; 
+    border-radius: 3px;
+}
+.qlist{
+    position: relative;
+    padding-left: 50px;
+}
+.land_listing:nth-child(even){
+    background-color: #f2f3f6;
+}
+.qlist p{
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 10px;
+}
+.qlist p strong{
+    color: #3a4350;
+    font-weight: 600;
+}
+.qlist h2{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: normal;
+    margin-bottom: 10px;
+    font-family: 'Jost', sans-serif;
+}
+.qlist h2 span{
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.landing_form{
+    background-color: #f47a5b;
+    padding: 35px 40px;
+    color: #fff;
+    margin-top: 30px; 
+    border-radius: 3px;
+    box-shadow: 0 0 10px #3b5483; 
+}
+.landing_form h2{
+    font-size: 24px;
+    line-height: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Jost', sans-serif;
+}
+.banner-mail-form{position: relative; padding-right: 140px;}
+form .banner-mail-form input[type="email"] {
+    background-color: #fff;
+    border-color: #fff;
+    height: 48px;
+    padding: 0 25px;
+    border-radius: 3px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #fff;
+    outline: none;
+}
+form .banner-mail-form .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 48px; 
+    min-width: 130px;
+    border: 1px solid #fff;
+    border-color: #3b5483;
+    background-color: #3b5483;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600; 
+    border-radius: 3px;
+    width: auto;
+}
+form .banner-mail-form .btn:hover, form .banner-mail-form .btn:focus{
+    background-color: #fff;
+    color: #3b5483;
+}
+
+.mainFooter{
+    background-color: #161c27;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+.mainFooter p{
+    font-size: 12px;
+}
+.chead{
+    font-size: 17px;
+    line-height: normal;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.cpara{
+    color: #9eadc3;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    font-family: 'SofiaProLight';
+}
+
+/* ==================== */
+/*768px*/
+@media only screen and (max-width: 991px) { 
+    .banner-mail-form{margin-top: 15px;}
+}
+/*480px*/
+@media only screen and (max-width: 599px) { 
+    .landing_form h2 { font-size: 22px; line-height: 27px; }
+}
+/*360px*/
+@media only screen and (max-width: 479px) { 
+    .land_listing { padding: 15px 15px; }
+    .landing_form h2 { font-size: 16px; line-height: 20px; }
+    .landing_form{padding: 20px;}
+    form .banner-mail-form .btn{min-width: auto;}
+    .banner-mail-form{padding-right: 80px;}
+    .qlist h2{font-size: 20px; line-height: 23px;}
+    .logo a{margin: 0 auto; max-width: 150px;}
+    .logo{text-align: center;}
+    .phone, .address{width: 100%; text-align: center;}
+    .htop{padding: 10px 0;}
+    .landing-bannertext { padding-top: 150px; }
+    .chead { font-size: 15px; }
+    .qlist p {
+        font-size: 15px;
+        line-height: 26px;
+    }
+}
