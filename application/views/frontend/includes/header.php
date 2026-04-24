@@ -113,7 +113,9 @@
 							<nav class="nav_menu">
 								<ul class="">
 									<li><a href="<?php echo base_url();?>aboutus"><span>About</span></a> </li>
+									<?php if($this->session->userdata('isLoggedIn')): ?>
 									<li><a href="<?php echo base_url();?>marketplace"><span>Listings</span></a> </li>
+									<?php endif; ?>
 									<li><a href="<?php echo base_url();?>maconsulting"><span>M&A Advisory </span></a> </li>
 									<li><a href="<?php echo base_url();?>acquisitionfunding"><span>Financing</span></a> </li>
 								</ul>
@@ -177,9 +179,9 @@
 									<h2 class="subheading"><!--Business BrokerBUSINESS MARKETPLACE--><?php echo $banner['homeheading2']?></h2>
 									<p><?php echo $banner['homeheading3']?></p>
 								</div>
-								<div class="search_section mt20">
+								<div class="search_section mt20 d-none">
 									<form method="get" action="<?php echo base_url();?>marketplace">
-									<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
 										<div class="row">
 											<div class="col-sm-4">
 												<input type="text" id="politicianName" name="searchText" value="<?php echo $this->security->xss_clean(trim($_GET['searchText']));?>" placeholder="Keyword">

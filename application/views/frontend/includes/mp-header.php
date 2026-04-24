@@ -124,7 +124,9 @@
 							<nav class="nav_menu">
 								<ul class="">
 									<li><a href="<?php echo base_url();?>aboutus"><span>About</span></a> </li>
+									<?php if($this->session->userdata('isLoggedIn')): ?>
 									<li><a href="<?php echo base_url();?>marketplace"><span>Listings</span></a> </li>
+									<?php endif; ?>
 									<li><a href="<?php echo base_url();?>maconsulting"><span>M&A Advisory </span></a> </li>
 									<li><a href="<?php echo base_url();?>acquisitionfunding"><span>Financing</span></a> </li>
 								</ul>
