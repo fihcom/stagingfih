@@ -112,7 +112,7 @@
 						<div class="nav_wrapper">
 							<nav class="nav_menu">
 								<ul class="">
-									<li><a href="<?php echo base_url();?>aboutus"><span>About</span></a> </li>
+									<li><a href="<?php echo base_url();?>aboutus"><span>[STAGE] About</span></a> </li>
 									<?php if($this->session->userdata('isLoggedIn')): ?>
 									<li><a href="<?php echo base_url();?>marketplace"><span>Listings</span></a> </li>
 									<?php endif; ?>
